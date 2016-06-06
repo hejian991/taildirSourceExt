@@ -3,7 +3,7 @@ package org.apache.flume.instrumentation;
 import org.apache.commons.lang.ArrayUtils;
 
 public class SourceCounterExt extends MonitoredCounterGroup implements
-    SourceCounterMBeanExt {
+    SourceCounterExtMBean {
 
   private static final String COUNTER_EVENTS_RECEIVED =
       "src.events.received";

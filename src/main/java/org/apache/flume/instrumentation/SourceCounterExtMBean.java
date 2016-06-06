@@ -25,7 +25,8 @@ package org.apache.flume.instrumentation;
  * interface might change between minor releases. Please see
  * {@linkplain org.apache.flume.instrumentation.SourceCounter} class.
  */
-public interface SourceCounterMBeanExt extends SourceCounterMBean{
+public interface SourceCounterExtMBean extends SourceCounterMBean {
 
     long getByteAcceptedCount();
+
 }

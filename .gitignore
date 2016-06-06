@@ -30,3 +30,4 @@ nb-configuration.xml
 /conf-product-bak/*
 /apache-flume-*
 /src/main/java/com/iwaimai/pbmsg/Sample.java
+/conf/taildirExt2.properties
