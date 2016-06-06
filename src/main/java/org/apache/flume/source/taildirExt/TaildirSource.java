@@ -33,6 +33,7 @@ import org.apache.flume.Event;
 import org.apache.flume.FlumeException;
 import org.apache.flume.conf.Configurable;
 import org.apache.flume.instrumentation.SourceCounter;
+import org.apache.flume.instrumentation.SourceCounterExt;
 import org.apache.flume.interceptor.LimitInterceptor;
 import org.apache.flume.source.AbstractSource;
 import org.apache.flume.source.PollableSourceConstants;
@@ -72,7 +73,7 @@ public class TaildirSource extends AbstractSource implements
     private boolean inodeHeader;
     private boolean fileNameHeader;
 
-    private SourceCounter sourceCounter;
+    private SourceCounterExt sourceCounter;
     private ReliableTaildirEventReader reader;
     private ScheduledExecutorService idleFileChecker;
     private ScheduledExecutorService positionWriter;
@@ -230,7 +231,7 @@ public class TaildirSource extends AbstractSource implements
         logFileType = context.getString(LOG_FILE_TYPE, DEFAULT_LOG_FILE_TYPE).toLowerCase();
 
         if (sourceCounter == null) {
-            sourceCounter = new SourceCounter(getName());
+            sourceCounter = new SourceCounterExt(getName());
         }
     }
 
@@ -254,7 +255,7 @@ public class TaildirSource extends AbstractSource implements
     }
 
     @VisibleForTesting
-    protected SourceCounter getSourceCounter() {
+    protected SourceCounterExt getSourceCounter() {
         return sourceCounter;
     }
 
